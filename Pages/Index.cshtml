@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Azure OpenAI Completion Example";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                 <textarea asp-for="TextValue" class="form-control" rows="15"></textarea>
+             </div>
+
+            <div class="form-group">
+                <input type="submit" value="Call Completion" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
